@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post" class="buttons">
+  <h3>Chat Odasına Giriş</h3>
+  <div>
+    <label>İsim:</label>
+    <input
+      type="text"
+      placeholder="İsim seçiniz!"
+      name="name"
+      value="{{name}}"
+    />
+  </div>
+  <div class="join">
+    <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
+    <button type="submit" name="join">Odaya katıl</button>
+  </div>
+  <button type="submit" name="create" class="create-btn">Oda Oluştur</button>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form>
+{% endblock %}
